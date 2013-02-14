@@ -1,0 +1,42 @@
+Esta aplicación trabaja en conjuncion con Iris Manager para cargar Homebrew/PSN (no emulados) en PS3 desde unidad USB:
+
+Pasos:
+
+1) Instala Iris Manager y el pkg "homelaunc1.pkg"
+
+2) Crea la carpeta "games" en raiz del dispositivo USB
+
+3) Introduce dentro el contenido de los paquetes, siendo la carpeta raiz la ID.
+Ejemplo: Si el paquete en la posición 0x30 contiene  UP0001-MIHOMEBREW1_00-0000000000000000 el contenido ira en usb:/games/MIHOMEBREW1
+
+4) Una forma de hacerlo facil es utilizar mis pkgtools:
+
+http://mods.elotrolado.net/~hermes/ps3/pkgtools_v1.8.rar
+
+http://www.elotrolado.net/hilo_aplicaciones-v1-7-herramientas-de-desempaquetado-empaquetado-y-fixeo_1834589
+
+Introduce las keys necesarias en los directorios "data" (scetool) y ".ps3" y luego ejecuta iris_pkgtools.bat
+
+- Con la opcion 1 simplemente extrae el contenido de manera apropiada.
+
+- Con la opcion 2 fixea PARAM.SFO y los ejecutables si version > 3.40
+
+- Con la opcion 3 fuerza el fixeo (para arreglar ejecutables antiguos)
+
+5) Introduce el dispositivo USB en la PS3 y ejecuta Iris Manager.
+
+6) Pulsa R3 para listar el contenido Homebrew. Pulsa X sobre el icono para salir.
+
+7) En opciones de Red tendras "USB Game Launcher" (homelaunc1) con el icono azul, pulsa sobre ello
+
+8) Una vez que salga al sistema, pulsa sobre el icono verde que muestra ahora para ejecutar la aplicacion
+
+9) El icono rojo indica que la aplicación no está preparada (ejecutar y seleccionar desde Iris Manager). El azul que esta preparada y 
+requiere que entres (en ambos casos se muestra el titulo de la carga anterior, ignorar eso) y el verde, que mostrara el titulo correctamente, 
+que esta listo para correr nuestro homebrew o PSN (en resumen, necesita una ejecucion previa para pasar de estado azul a verde)
+
+10) A disfrutar!
+
+NOTA: Tanto Iris como el USB Game Launcher utilizan redirecciones (syscall 8) bajo un mismo punto: es posible que algunas aplicaciones no funcionen
+por que la redireccion no es perfecta y tambien por el punto de entrada empleado.
+
